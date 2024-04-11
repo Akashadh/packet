@@ -1,0 +1,27 @@
+<!-- packet_sniffer/templates/packet_sniffer/home.html -->
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Packet Sniffer</title>
+</head>
+<body>
+    <h1>Packet Sniffer</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="protocol">Select Protocol:</label>
+        <select name="protocol" id="protocol">
+            <option value="tcp">TCP</option>
+            <option value="udp">UDP</option>
+            <option value="ip">IP</option>
+            <option value="dns">DNS</option>
+        </select>
+        <br>
+        <label for="packet_count">Number of Packets:</label>
+        <input type="number" name="packet_count" id="packet_count" value="10">
+        <br>
+        <button type="submit">Sniff Packets</button>
+    </form>
+</body>
+</html>

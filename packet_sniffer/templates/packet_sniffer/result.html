@@ -1,0 +1,38 @@
+<!-- packet_sniffer/templates/packet_sniffer/result.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packet Sniffer - Results</title>
+</head>
+<body>
+    <h1>Packet Sniffer - Results</h1>
+    <p>Showing {{ packets|length }} packets:</p>
+    <ul><ol type="1">
+        {% for packet in packets %}
+        <li>{{ packet.summary }}</li>
+        {% endfor %}
+    </ol>
+    </ul>
+    <p><ul><li>Ether Represents Ethernet, the standard for wired LAN connections.</li>
+        <li>IP: Stands for Internet Protocol, which handles addressing and routing of data packets.</li>
+        <li>TCP: Transmission Control Protocol ensures reliable and ordered data delivery over networks.</li>
+        <li>IP Addresses (e.g., 192.168.1.108): Unique identifiers assigned to devices on a network.</li>
+        <li> Port Numbers (e.g., 55081): Allow multiple applications on a device to use networking resources simultaneously.</li>
+        <li>Remote IP Addresses: Addresses of devices communicating with the local device over the network.</li>
+        <li>  https: Indicates traffic is using HTTPS, which is HTTP encrypted with SSL/TLS for secure communication.</li>
+        <li> SA (SYN-ACK): Flags used in TCP to establish connections; SYN initiates, and SYN-ACK acknowledges the initiation.</li>
+        <li>
+            A (Acknowledgment): TCP flag confirming the receipt of data or successful connection setup</li>
+        <li>
+       
+            FPA (FIN-PSH-ACK): TCP flags signaling the end of a connection, data push, and acknowledgment.</li>
+            <li> Raw: Possibly refers to unprocessed data within the packet payload, including application-layer information.</li>
+        
+    
+        
+        
+      
+       </ul></p>
+</body>
+</html>
