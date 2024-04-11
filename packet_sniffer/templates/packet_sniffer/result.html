@@ -6,14 +6,26 @@
     <title>Packet Sniffer - Results</title>
 </head>
 <body>
-    <h1>Packet Sniffer - Results</h1>
+
+       <h1>Packet Sniffer - Results</h1>
     <p>Showing {{ packets|length }} packets:</p>
-    <ul><ol type="1">
+    <ul>
         {% for packet in packets %}
-        <li>{{ packet.summary }}</li>
+        <li>
+            <strong>Protocol:</strong> {{ packet.protocol }}<br>
+            <strong>Source IP:</strong> {{ packet.source_ip }}<br>
+            <strong>Destination IP:</strong> {{ packet.destination_ip }}<br>
+            <strong>Source Port:</strong> {{ packet.source_port }}<br>
+            <strong>Destination Port:</strong> {{ packet.destination_port }}<br>
+            <strong>Summary:</strong> {{ packet.summary }}
+        </li>
         {% endfor %}
-    </ol>
     </ul>
+{% if protocol == "tcp" %}
+<li>IP: Stands for Internet Protocol, which handles addressing and routing of data packets.</li>
+        <li>TCP: Transmission Control Protocol ensures reliable and ordered data delivery over networks.</li>
+        <li>IP Addresses (e.g., 192.168.1.108): Unique identifiers assigned to devices on a network.</li>
+{% endif %}
     <p><ul><li>Ether Represents Ethernet, the standard for wired LAN connections.</li>
         <li>IP: Stands for Internet Protocol, which handles addressing and routing of data packets.</li>
         <li>TCP: Transmission Control Protocol ensures reliable and ordered data delivery over networks.</li>
